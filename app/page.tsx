@@ -20,19 +20,24 @@ const validationSchema = Yup.object({
 
 export default function SubmitPage() {
   const handleSubmitRadio = async (values: ItemRadio, { setSubmitting, resetForm }: any) => {
+    const toastId = toast.loading("Đang gửi...");
     try {
       const lineId = await getLiffId() || '123';
       const payload: ItemRadio = {
         ...values,
         lineId,
       };
-      toast.loading("Đang gửi...");
       const res = await createRadio(payload)
-      toast.success("🎧 Gửi thành công!");
+      toast.success("🎧 Gửi thành công!", {
+        id: toastId, // 👈 replace loading
+      });
+    
       resetForm();
     } catch (error) {
       console.error(error);
-      toast.error("🎧 Gửi thất bại, hãy thử lại vài lần hoặc liên hệ với Phú nhé!");
+      toast.error("🎧 Gửi thất bại, hãy thử lại vài lần hoặc liên hệ với Phú nhé!", {
+        id: toastId, // 👈 replace loading
+      });
     } finally {
       setSubmitting(false);
     }

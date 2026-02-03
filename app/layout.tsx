@@ -35,8 +35,8 @@ export default function RootLayout({
         
         {/* Main content area */}
         <main className="flex-1 px-4 mt-10 py-10">
-          {children}
           <ClientProviders />
+          {children}
         </main>
         
         {/* Footer component */}

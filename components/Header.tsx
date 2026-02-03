@@ -13,7 +13,7 @@ export default function Header() {
   };
 
   const navigateToDetail = async () => {
-    const lineId = await getLiffId() || '123';
+    const lineId = await getLiffId() || '';
     router.push(`/list/${lineId}`)
   }
 

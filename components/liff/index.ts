@@ -19,7 +19,7 @@ export async function initLiff() {
 }
 
 const getLiffId = async () => {
-  const liffID = process.env.NEXT_LIFF_ID;
+  const liffID = process.env.NEXT_PUBLIC_LIFF_ID;
   try {
     await liff.init({ liffId: liffID || "" });
     const profile = await liff.getProfile();

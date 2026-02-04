@@ -5,16 +5,16 @@ import { Toaster } from "sonner";
 import { initLiff } from "@/components/liff";
 
 export default function ClientProviders() {
-    // useEffect(() => {
-    //     initLiff()
-    //         .then(profile => {
-    //             if (profile) {
-    //                 console.log(profile.userId);
-    //                 localStorage.setItem("lineId", profile.userId);
-    //             }
-    //         })
-    //         .catch(console.error);
-    // }, [])
+    useEffect(() => {
+        initLiff()
+            .then(profile => {
+                if (profile) {
+                    console.log(profile.userId);
+                    localStorage.setItem("lineId", profile.userId);
+                }
+            })
+            .catch(console.error);
+    }, [])
 
   return (
     <Toaster

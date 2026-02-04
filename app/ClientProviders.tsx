@@ -6,15 +6,15 @@ import liff from "@line/liff";
 import { initLiff } from "@/components/liff";
 
 export default function ClientProviders() {
-    useEffect(() => {
-        initLiff()
-            .then(profile => {
-                if (profile) {
-                    console.log(profile.userId);
-                }
-            })
-            .catch(console.error);
-    }, []);
+    // useEffect(() => {
+    //     initLiff()
+    //         .then(profile => {
+    //             if (profile) {
+    //                 console.log(profile.userId);
+    //             }
+    //         })
+    //         .catch(console.error);
+    // }, []);
 
     return <Toaster position="top-center" richColors />;
 }

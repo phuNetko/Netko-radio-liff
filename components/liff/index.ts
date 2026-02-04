@@ -23,6 +23,8 @@ const getLiffId = async () => {
   try {
     await liff.init({ liffId: liffID || "" });
     const profile = await liff.getProfile();
+    console.log(profile);
+    
     const lineId = profile.userId;
     return lineId;
   } catch (error) {

@@ -43,7 +43,7 @@ export default function SubmitPage() {
     }
   };
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-white backdrop-blur-sm rounded-md">
+    <div className="max-w-lg mx-auto mt-3 p-6  dark:bg-[#212121]/90 bg-white backdrop-blur-sm rounded-md shadow-md shadow-black dark:shadow-white">
       <Formik
         initialValues={{
           lineId: "",
@@ -58,14 +58,14 @@ export default function SubmitPage() {
       >
         {/* {({ isSubmitting, status }) => ( */}
         <Form className="flex flex-col gap-4">
-          <InputBase required label="Bài hát mong muốn (link)" name="baiHat" as="input" placeholder="Bài hát mong muốn (link)" />
+          <InputBase required label="Bài hát (link hoặc tên)" name="baiHat" as="input" placeholder="Bài hát (link hoặc tên)" />
           <div className="flex lg:flex-row flex-col lg:gap-4 md:gap-4 gap-2">
-            <InputBase required label="Người gửi" name="nguoiGui" as="input" placeholder="Người gửi" className="w-full" />
+            <InputBase required label="Người gửi" name="nguoiGui" as="input" placeholder="Người gửi" className="w-full " />
             <InputBase required label="Người nhận" name="nguoiNhan" as="input" placeholder="Người nhận" className="w-full" />
           </div>
           <InputBase required label="Lời nhắn" name="loiNhan" as="textarea" placeholder="Lời nhắn" rows={4} className="w-full" />
           <InputBase label="Ghi chú" name="ghiChu" as="textarea" placeholder="Ghi chú" rows={2} className="w-full" />
-          <button className="bg-blue-500 mt-auto text-white px-4 py-2 rounded-md text-center from-20% to-100%">
+          <button className="dark:bg-[linear-gradient(90deg,#FF6464_0%,#FFBF59_50%,#47C9FF_100%)] bg-[linear-gradient(90deg,#FFBF59_0%,#FF6464_50%,#47C9FF_100%)] transition-all duration-300  dark:text-black text-white px-4 py-2 mt-5 font-semibold text-[18px] text-center from-20% to-100%">
             Gửi
           </button>
         </Form>

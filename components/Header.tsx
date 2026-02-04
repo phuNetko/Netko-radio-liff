@@ -11,7 +11,11 @@ export default function Header() {
   const router = useRouter();
 
   const navigateToDetail = async () => {
-    const lineId = localStorage.getItem('lineId');
+    const lineIdLocal =
+      typeof window !== "undefined"
+        ? localStorage.getItem("lineId")
+        : null;
+    const lineId = await getLiffId() || lineIdLocal
     router.push(`/list/${lineId}`)
   }
 
@@ -53,7 +57,7 @@ export default function Header() {
       </header>
       <ul
         className={`${open ? 'flex' : 'hidden'} flex-col fixed top-0 z-100 left-0 bottom-0 right-1/2 bg-white backdrop-blur-sm`}
-      onClick={() => setOpen(!open)}
+        onClick={() => setOpen(!open)}
       >
         <span
           // href="/"
@@ -66,7 +70,7 @@ export default function Header() {
           className="text-black text-decoration-none text-sm font-medium transition-opacity hover:opacity-80 px-3 py-3 mt-3 hover:bg-amber-50 border-b border-gray-300 mx-3"
           onMouseOver={(e) => (e.currentTarget.style.opacity = '0.8')}
           onMouseOut={(e) => (e.currentTarget.style.opacity = '1')}
-         
+
         >
           Đăng ký
         </Link>

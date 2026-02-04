@@ -9,12 +9,9 @@ import ThemeToggle from './Form/ThemeToggle';
 export default function Header() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  const handleOpen = () => {
-    setOpen(!open);
-  };
 
   const navigateToDetail = async () => {
-    const lineId = await getLiffId() || '';
+    const lineId = localStorage.getItem('lineId');
     router.push(`/list/${lineId}`)
   }
 
@@ -56,7 +53,7 @@ export default function Header() {
       </header>
       <ul
         className={`${open ? 'flex' : 'hidden'} flex-col fixed top-0 z-100 left-0 bottom-0 right-1/2 bg-white backdrop-blur-sm`}
-      // onClick={() => setOpen(!open)}
+      onClick={() => setOpen(!open)}
       >
         <span
           // href="/"
@@ -69,6 +66,7 @@ export default function Header() {
           className="text-black text-decoration-none text-sm font-medium transition-opacity hover:opacity-80 px-3 py-3 mt-3 hover:bg-amber-50 border-b border-gray-300 mx-3"
           onMouseOver={(e) => (e.currentTarget.style.opacity = '0.8')}
           onMouseOut={(e) => (e.currentTarget.style.opacity = '1')}
+         
         >
           Đăng ký
         </Link>

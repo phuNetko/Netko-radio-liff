@@ -22,7 +22,7 @@ export default function SubmitPage() {
   const handleSubmitRadio = async (values: ItemRadio, { setSubmitting, resetForm }: any) => {
     const toastId = toast.loading("Đang gửi...");
     try {
-      const lineId = await getLiffId() || '';
+      const lineId = await getLiffId() || localStorage.getItem('lineId') || '';
       const payload: ItemRadio = {
         ...values,
         lineId,
@@ -31,7 +31,7 @@ export default function SubmitPage() {
       toast.success("🎧 Gửi thành công!", {
         id: toastId, // 👈 replace loading
       });
-    
+
       resetForm();
     } catch (error) {
       console.error(error);

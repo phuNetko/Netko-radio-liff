@@ -106,7 +106,7 @@ export default function SubmitPage() {
                 <div className="grid  lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
                   <InputBase
                     required
-                    label="From"
+                    label="Người gửi"
                     name="nguoiGui"
                     as="input"
                     placeholder="Your name"
@@ -114,7 +114,7 @@ export default function SubmitPage() {
                   />
                   <InputBase
                     required
-                    label="To"
+                    label="Người nhận"
                     name="nguoiNhan"
                     as="input"
                     placeholder="Recipient"
@@ -124,7 +124,7 @@ export default function SubmitPage() {
 
                 <InputBase
                   required
-                  label="Message"
+                  label="Lời nhắn"
                   name="loiNhan"
                   as="textarea"
                   placeholder="Write your heartfelt message..."
@@ -133,7 +133,7 @@ export default function SubmitPage() {
                 />
 
                 <InputBase
-                  label="Notes (optional)"
+                  label="Ghi chú"
                   name="ghiChu"
                   as="textarea"
                   placeholder="Any special instructions for the DJ"

@@ -40,13 +40,13 @@ export default function AboutPage() {
         <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-zinc-900 dark:text-white">
           About Netko Radio
         </h1>
-        <p className="text-zinc-600 dark:text-zinc-400">
-          Connecting hearts through music since 2024
+        <p className="text-zinc-600 dark:text-zinc-200">
+          Connecting hearts through music since 2025
         </p>
       </div>
 
       <div className="relative">
-        <div className="absolute -inset-px rounded-3xl bg-gradient-to-b from-black/5 dark:from-white/10 to-transparent pointer-events-none" />
+        <div className="absolute -inset-px rounded-3xl bg-white/50 dark:bg-zinc-900/40 to-transparent pointer-events-none" />
 
         <div className="relative bg-white/50 dark:bg-zinc-900/40 border border-black/5 dark:border-white/5 rounded-3xl overflow-hidden">
           <div className="flex border-b border-black/5 dark:border-white/5">
@@ -61,7 +61,7 @@ export default function AboutPage() {
                   className={`flex-1 flex items-center justify-center gap-2 px-4 py-4 text-sm font-medium transition-all cursor-pointer ${
                     isActive
                       ? "text-zinc-900 dark:text-white bg-gradient-to-b from-[#6ca03d]/10 to-transparent border-b-2 border-[#6ca03d]"
-                      : "text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
+                      : "text-zinc-200 hover:text-zinc-700 dark:hover:text-zinc-300"
                   }`}
                 >
                   <Icon size={16} />
@@ -75,7 +75,7 @@ export default function AboutPage() {
             <button
               onClick={prev}
               disabled={activeIndex === 0}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 min-w-[44px]! flex justify-center items-center rounded-full bg-black/5 dark:bg-black/40 backdrop-blur-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white disabled:opacity-20 transition-all cursor-pointer"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 min-w-[44px]! flex justify-center items-center rounded-full bg-black/5 dark:bg-black/40 backdrop-blur-sm text-zinc-200 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white disabled:opacity-20 transition-all cursor-pointer"
               aria-label="Previous"
             >
               <ChevronLeft size={18} />
@@ -83,7 +83,7 @@ export default function AboutPage() {
             <button
               onClick={next}
               disabled={activeIndex === sections.length - 1}
-              className="absolute right-2 top-1/2 min-w-[44px]! flex justify-center items-center -translate-y-1/2 z-10 p-2 rounded-full bg-black/5 dark:bg-black/40 backdrop-blur-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white disabled:opacity-20 transition-all cursor-pointer"
+              className="absolute right-2 top-1/2 min-w-[44px]! flex justify-center items-center -translate-y-1/2 z-10 p-2 rounded-full bg-black/5 dark:bg-black/40 backdrop-blur-sm text-zinc-200 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white disabled:opacity-20 transition-all cursor-pointer"
               aria-label="Next"
             >
               <ChevronRight size={18} />
@@ -96,13 +96,13 @@ export default function AboutPage() {
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
             >
-              <div className="w-full shrink-0 p-6 sm:p-8">
+              <div className="w-full shrink-0 p-6 sm:p-6">
                 <IntroSection />
               </div>
-              <div className="w-full shrink-0 p-6 sm:p-8">
+              <div className="w-full shrink-0 p-6 sm:p-6">
                 <TechSection />
               </div>
-              <div className="w-full shrink-0 p-6 sm:p-8">
+              <div className="w-full shrink-0 p-6 sm:p-6">
                 <SupportSection />
               </div>
             </div>
@@ -128,7 +128,7 @@ export default function AboutPage() {
       <div className="text-center mt-8">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors cursor-pointer"
+          className="inline-flex items-center gap-2 text-sm text-zinc-200 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors cursor-pointer"
         >
           <Radio size={14} />
           Back to requests
@@ -157,7 +157,7 @@ function IntroSection() {
       </p>
 
       <div className="bg-zinc-100/50 dark:bg-zinc-800/50 border border-black/5 dark:border-white/5 rounded-2xl p-5">
-        <div className="flex items-center gap-2 text-zinc-500 mb-4">
+        <div className="flex items-center gap-2 text-zinc-200 mb-4">
           <Users size={16} />
           <span className="text-sm font-medium uppercase tracking-wider">Co-founders (Đồng sáng lập)</span>
         </div>
@@ -217,19 +217,19 @@ function TechSection() {
         ))}
       </div>
 
-      <div className="bg-zinc-100/50 dark:bg-zinc-800/50 border border-black/5 dark:border-white/5 rounded-2xl p-5 space-y-3">
+      <div className="bg-zinc-100/50 dark:bg-zinc-800/90 border border-black/5 dark:border-white/5 rounded-2xl p-5 space-y-3">
         {team.map((member) => (
           <div key={member.role} className="flex items-start gap-3">
             <div className={`w-2 h-2 mt-2 rounded-full ${member.color}`} />
             <div>
-              <p className="text-xs text-zinc-500 uppercase tracking-wider">{member.role}</p>
+              <p className="text-xs text-zinc-200 uppercase tracking-wider">{member.role}</p>
               <p className="font-medium text-zinc-900 dark:text-white">{member.name}</p>
             </div>
           </div>
         ))}
       </div>
 
-      <p className="text-zinc-500 text-sm flex items-start gap-2">
+      <p className="text-zinc-200 text-sm flex items-start gap-2">
         <Zap size={14} className="text-yellow-500 mt-0.5 shrink-0" />
         Chúng tôi rất mong nhận được góp ý để hoàn thiện hệ thống tốt hơn
       </p>
@@ -256,7 +256,7 @@ function SupportSection() {
   };
 
   return (
-    <div className="space-y-6 text-center">
+    <div className="space-y-6 text-center ">
       <div className="flex items-center justify-center gap-3">
         <div className="p-3 rounded-xl bg-gradient-to-br from-orange-500/10 to-pink-500/10 dark:from-orange-500/20 dark:to-pink-500/20 text-orange-500">
           <Coffee size={22} />
@@ -291,9 +291,9 @@ function SupportSection() {
         </button>
       </div>
 
-      <p className="text-zinc-500 text-sm flex items-center justify-center gap-2">
+      <p className="text-zinc-200 text-sm flex items-center justify-center gap-1">
         <Heart size={14} className="text-red-500" />
-        Cảm ơn bạn đã đồng hành cùng Netko Radio!
+        Netko Radio cảm ơn bạn!
       </p>
     </div>
   );

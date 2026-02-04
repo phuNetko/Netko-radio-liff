@@ -26,7 +26,7 @@ const InputBase = ({
   const isTextarea = as === 'textarea';
 
   return (
-    <div className={`space-y-2 ${className}`}>
+    <div className={`space-y-1 ${className}`}>
       <label
         htmlFor={name}
         className="flex items-center gap-1.5 text-sm font-medium text-zinc-700 dark:text-zinc-300"
@@ -43,7 +43,7 @@ const InputBase = ({
           return (
             <div className="relative group">
               {icon && (
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 dark:text-zinc-500 group-focus-within:text-[#6ca03d] transition-colors pointer-events-none">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 dark:text-zinc-200 group-focus-within:text-[#6ca03d] transition-colors pointer-events-none">
                   {icon}
                 </div>
               )}
@@ -59,7 +59,7 @@ const InputBase = ({
                   hover:bg-zinc-100 dark:hover:bg-zinc-900/70
                   border rounded-2xl
                   text-zinc-900 dark:text-white text-base
-                  placeholder:text-zinc-400 dark:placeholder:text-zinc-600
+                  placeholder:text-zinc-400 dark:placeholder:text-white/50
                   transition-all duration-200
                   ${hasError
                     ? 'border-red-500/50 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'

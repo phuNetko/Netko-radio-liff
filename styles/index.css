@@ -2,7 +2,13 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+:root {
+  --radio-bg: url("/radio_bg.jpg");
+}
 
+.dark {
+  --radio-bg: url("/bg-radio.jpg");
+}
 /* Light mode (default) */
 :root {
   /* Brand Colors - Green #6ca03d */

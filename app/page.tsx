@@ -52,9 +52,9 @@ export default function SubmitPage() {
   };
 
   return (
-    <div className="py-6">
+    <div className="py-6" >
       {/* Hero Section */}
-      <section className="text-center mb-10">
+      <section className="text-center mb-10" >
         <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-6 rounded-full bg-[#6ca03d]/10 border border-[#6ca03d]/20">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full rounded-full bg-[#8ab862] opacity-75 animate-ping" />
@@ -69,14 +69,14 @@ export default function SubmitPage() {
           Share Your <span className="bg-gradient-to-r from-[#6ca03d] via-[#6ca03d] to-[#8ab862] bg-clip-text text-transparent">Vibe</span>
         </h1>
 
-        <p className="text-zinc-600 dark:text-zinc-400 text-base max-w-sm mx-auto">
+        <p className="text-zinc-600 dark:text-zinc-100 text-base max-w-sm mx-auto">
           Request a song and send a message to someone special through the radio waves
         </p>
       </section>
 
       {/* Form Card */}
       <div className="relative">
-        <div className="absolute -inset-px rounded-3xl bg-gradient-to-b from-black/5 dark:from-white/10 to-transparent pointer-events-none" />
+        <div className="absolute -inset-px rounded-3xl bg-gradient-to-b from-black/5 dark:from-white/50 to-transparent pointer-events-none" />
         <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-[#6ca03d]/10 via-[#6ca03d]/10 to-[#8ab862]/10 dark:from-[#6ca03d]/20 dark:via-[#6ca03d]/20 dark:to-[#8ab862]/20 blur-2xl opacity-50 pointer-events-none" />
 
         <div className="relative bg-white/50 dark:bg-zinc-900/40 backdrop-blur-sm border border-black/5 dark:border-white/5 rounded-3xl p-6 sm:p-8">
@@ -103,7 +103,7 @@ export default function SubmitPage() {
                   icon={<Music2 size={18} />}
                 />
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid  lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
                   <InputBase
                     required
                     label="From"
@@ -129,7 +129,7 @@ export default function SubmitPage() {
                   as="textarea"
                   placeholder="Write your heartfelt message..."
                   rows={4}
-                  icon={<MessageCircle size={18} />}
+                  // icon={<MessageCircle size={18} />}
                 />
 
                 <InputBase
@@ -138,7 +138,7 @@ export default function SubmitPage() {
                   as="textarea"
                   placeholder="Any special instructions for the DJ"
                   rows={2}
-                  icon={<FileText size={18} />}
+                  // icon={<FileText size={18} />}
                 />
 
                 <button

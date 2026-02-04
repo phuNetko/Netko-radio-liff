@@ -41,7 +41,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-dvh antialiased bg-white dark:bg-[#09090B] text-zinc-900 dark:text-white transition-colors duration-300">
+      <body className="min-h-dvh antialiased bg-white dark:bg-[#09090B] text-zinc-900 dark:text-white transition-colors duration-300"
+        style={{ backgroundImage: "var(--radio-bg)" }}
+      >
         {/* Ambient background */}
         <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
           {/* Gradient orbs - dark mode */}

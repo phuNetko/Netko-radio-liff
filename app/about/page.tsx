@@ -75,7 +75,7 @@ export default function AboutPage() {
             <button
               onClick={prev}
               disabled={activeIndex === 0}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/5 dark:bg-black/40 backdrop-blur-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white disabled:opacity-20 transition-all cursor-pointer"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 min-w-[44px]! flex justify-center items-center rounded-full bg-black/5 dark:bg-black/40 backdrop-blur-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white disabled:opacity-20 transition-all cursor-pointer"
               aria-label="Previous"
             >
               <ChevronLeft size={18} />
@@ -83,7 +83,7 @@ export default function AboutPage() {
             <button
               onClick={next}
               disabled={activeIndex === sections.length - 1}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/5 dark:bg-black/40 backdrop-blur-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white disabled:opacity-20 transition-all cursor-pointer"
+              className="absolute right-2 top-1/2 min-w-[44px]! flex justify-center items-center -translate-y-1/2 z-10 p-2 rounded-full bg-black/5 dark:bg-black/40 backdrop-blur-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white disabled:opacity-20 transition-all cursor-pointer"
               aria-label="Next"
             >
               <ChevronRight size={18} />
@@ -113,7 +113,7 @@ export default function AboutPage() {
               <button
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
-                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                className={`h-1.5 rounded-full min-h-2! transition-all cursor-pointer ${
                   idx === activeIndex
                     ? "w-6 bg-[#6ca03d]"
                     : "w-1.5 bg-zinc-300 dark:bg-zinc-700 hover:bg-zinc-400 dark:hover:bg-zinc-600"
@@ -149,17 +149,17 @@ function IntroSection() {
       </div>
 
       <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-        <strong className="text-zinc-900 dark:text-white">Netko Radio</strong> broadcasts every Thursday afternoon, creating a space for relaxation, connection, and sharing emotions through music.
+        <strong className="text-zinc-900 dark:text-white">Netko Radio</strong> là chương trình phát sóng vào chiều thứ 5 hàng tuần, nhằm mang đến không gian thư giãn, kết nối và chia sẻ cảm xúc cho mọi người.
       </p>
 
       <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-        Running for <strong className="text-zinc-900 dark:text-white">6 months</strong> with official approval from Netko's leadership team.
+      Chương trình đã hoạt động được khoảng <strong className="text-zinc-900 dark:text-white">6 tháng</strong> với sự đồng ý của Ban Lãnh Đạo công ty Netko.
       </p>
 
       <div className="bg-zinc-100/50 dark:bg-zinc-800/50 border border-black/5 dark:border-white/5 rounded-2xl p-5">
         <div className="flex items-center gap-2 text-zinc-500 mb-4">
           <Users size={16} />
-          <span className="text-sm font-medium uppercase tracking-wider">Co-founders</span>
+          <span className="text-sm font-medium uppercase tracking-wider">Co-founders (Đồng sáng lập)</span>
         </div>
         <div className="space-y-3">
           {[
@@ -203,7 +203,7 @@ function TechSection() {
       </div>
 
       <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-        A modern upgrade from Google Forms — designed for a smoother, faster user experience.
+      Phiên bản này thay thế cho việc nhập liệu qua Google Form, giúp trải nghiệm người dùng mượt mà và thuận tiện hơn. 
       </p>
 
       <div className="flex flex-wrap gap-2">
@@ -231,7 +231,7 @@ function TechSection() {
 
       <p className="text-zinc-500 text-sm flex items-start gap-2">
         <Zap size={14} className="text-yellow-500 mt-0.5 shrink-0" />
-        We welcome your feedback to make the system even better
+        Chúng tôi rất mong nhận được góp ý để hoàn thiện hệ thống tốt hơn
       </p>
     </div>
   );
@@ -265,7 +265,7 @@ function SupportSection() {
       </div>
 
       <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-        Love Netko Radio? Fuel our creativity with a coffee or bubble tea!
+      Nếu bạn yêu thích Netko Radio, hãy tiếp thêm động lực cho chúng tôi bằng những cốc cà phê hoặc trà sữa nho nhỏ!
       </p>
 
       {/* QR Code with Download */}
@@ -293,7 +293,7 @@ function SupportSection() {
 
       <p className="text-zinc-500 text-sm flex items-center justify-center gap-2">
         <Heart size={14} className="text-red-500" />
-        Thank you for supporting Netko Radio
+        Cảm ơn bạn đã đồng hành cùng Netko Radio!
       </p>
     </div>
   );

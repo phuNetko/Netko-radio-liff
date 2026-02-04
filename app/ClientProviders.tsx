@@ -15,7 +15,7 @@ export default function ClientProviders() {
                 }
             })
             .catch(console.error);
-    }, [localStorage.getItem("lineId")])
+    }, [])
 
     return <Toaster position="top-center" richColors />;
 }

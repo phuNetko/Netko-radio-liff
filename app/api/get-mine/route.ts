@@ -7,7 +7,7 @@ export async function GET(req: Request) {
 
     if (!lineId) {
       return NextResponse.json(
-        { success: false, error: "Missing lineId" },
+        { success: false, error: "Thiếu mã LINE (lineId)" },
         { status: 400 }
       );
     }

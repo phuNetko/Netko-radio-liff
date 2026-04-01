@@ -4,8 +4,8 @@ import '@/styles/index.css';
 import ClientProviders from "./ClientProviders";
 
 export const metadata: Metadata = {
-  title: "Netko Radio | Share Your Vibe",
-  description: "Send song requests and heartfelt messages through the radio waves",
+  title: "NETKO Radio | Gửi yêu cầu bài hát",
+  description: "Đăng ký bài hát và gửi lời nhắn qua chương trình radio",
 };
 
 export const viewport: Viewport = {
@@ -13,7 +13,10 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   viewportFit: 'cover',
-  themeColor: '#09090B',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
+  ],
 };
 
 export default function RootLayout({
@@ -41,37 +44,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-dvh antialiased bg-white dark:bg-[#09090B] text-zinc-900 dark:text-white transition-colors duration-300"
-        style={{ backgroundImage: "var(--radio-bg)" }}
-      >
-        {/* Ambient background */}
-        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-          {/* Gradient orbs - dark mode */}
-          <div className="hidden dark:block">
-            <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-[#6ca03d]/20 blur-[100px]" />
-            <div className="absolute top-1/2 -left-20 w-60 h-60 rounded-full bg-[#6ca03d]/15 blur-[80px]" />
-            <div className="absolute -bottom-20 right-1/3 w-72 h-72 rounded-full bg-[#8ab862]/10 blur-[90px]" />
-          </div>
-          {/* Gradient orbs - light mode */}
-          <div className="block dark:hidden">
-            <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-[#6ca03d]/10 blur-[100px]" />
-            <div className="absolute top-1/2 -left-20 w-60 h-60 rounded-full bg-[#6ca03d]/8 blur-[80px]" />
-            <div className="absolute -bottom-20 right-1/3 w-72 h-72 rounded-full bg-[#8ab862]/5 blur-[90px]" />
-          </div>
-
-          {/* Subtle grid */}
-          <div
-            className="absolute inset-0 opacity-[0.02] dark:opacity-[0.015]"
-            style={{
-              backgroundImage: `
-                linear-gradient(rgba(0,0,0,0.5) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,0,0,0.5) 1px, transparent 1px)
-              `,
-              backgroundSize: '48px 48px'
-            }}
-          />
-        </div>
-
+      <body className="min-h-dvh antialiased bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
         <Header />
 
         <main className="relative pt-20 pb-8 px-4 min-h-dvh">

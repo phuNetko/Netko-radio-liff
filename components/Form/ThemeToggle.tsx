@@ -15,9 +15,9 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       className="p-2.5 rounded-xl transition-all cursor-pointer
-                 dark:text-zinc-400 dark:hover:text-white dark:hover:bg-white/5
-                 text-zinc-600 hover:text-zinc-900 hover:bg-black/5"
-      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                 dark:text-neutral-400 dark:hover:text-white dark:hover:bg-white/10
+                 text-neutral-600 hover:text-black hover:bg-black/5"
+      aria-label={theme === "dark" ? "Chuyển sang chế độ sáng" : "Chuyển sang chế độ tối"}
     >
       {theme === 'dark' ? <Moon size={18} /> : <Sun size={18} />}
     </button>

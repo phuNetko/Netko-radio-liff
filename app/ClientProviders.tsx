@@ -20,19 +20,13 @@ export default function ClientProviders() {
     <Toaster
       position="top-center"
       toastOptions={{
-        style: {
-          background: 'rgba(24, 24, 27, 0.95)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          color: '#FAFAFA',
-          borderRadius: '16px',
-          backdropFilter: 'blur(12px)',
-          padding: '16px',
-        },
+        className:
+          "!bg-white !text-black !border !border-black/10 dark:!bg-black dark:!text-white dark:!border-white/15",
         classNames: {
-          success: 'border-emerald-500/30',
-          error: 'border-red-500/30',
-          loading: 'border-indigo-500/30',
-        }
+          success: "!border-emerald-500/40",
+          error: "!border-red-500/40",
+          loading: "!border-[#6ca03d]/40",
+        },
       }}
     />
   );

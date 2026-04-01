@@ -2,13 +2,6 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-:root {
-  --radio-bg: url("/radio_bg.jpg");
-}
-
-.dark {
-  --radio-bg: url("/bg-radio.jpg");
-}
 /* Light mode (default) */
 :root {
   /* Brand Colors - Green #6ca03d */
@@ -17,14 +10,14 @@
   --accent-dark: #5a8a32;
 
   /* Surfaces */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F4F4F5;
-  --bg-elevated: #FAFAFA;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f4f5;
+  --bg-elevated: #fafafa;
 
   /* Text */
-  --text-primary: #09090B;
-  --text-secondary: #52525B;
-  --text-muted: #A1A1AA;
+  --text-primary: #000000;
+  --text-secondary: #52525b;
+  --text-muted: #a1a1aa;
 
   /* Borders */
   --border: rgba(0, 0, 0, 0.08);
@@ -39,15 +32,15 @@
   --card-border: rgba(0, 0, 0, 0.06);
 }
 
-/* Dark mode */
+/* Dark mode — nền đen, chữ sáng (không dùng ảnh nền) */
 .dark {
-  --bg-primary: #09090B;
-  --bg-secondary: #18181B;
-  --bg-elevated: #27272A;
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-elevated: #171717;
 
-  --text-primary: #FAFAFA;
-  --text-secondary: #A1A1AA;
-  --text-muted: #52525B;
+  --text-primary: #ffffff;
+  --text-secondary: #d4d4d4;
+  --text-muted: #a3a3a3;
 
   --border: rgba(255, 255, 255, 0.08);
   --border-hover: rgba(255, 255, 255, 0.16);

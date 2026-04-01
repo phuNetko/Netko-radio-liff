@@ -7,21 +7,20 @@ import { createRadio } from "@/lib/api";
 import { ItemRadio } from '@/types/item';
 import { toast } from "sonner";
 import { getLiffId } from "@/components/liff";
-import { Send, Music2, UserCircle, MessageCircle, FileText, Sparkles } from "lucide-react";
+import { Send, Music2, UserCircle, Sparkles } from "lucide-react";
 
 const validationSchema = Yup.object({
-  baiHat: Yup.string().required("What song should we play?"),
-  nguoiGui: Yup.string().required("Let us know who you are"),
-  nguoiNhan: Yup.string().required("Who is this for?"),
-  loiNhan: Yup.string().required("Add your message"),
+  baiHat: Yup.string().required("Vui lòng nhập bài hát hoặc liên kết"),
+  nguoiGui: Yup.string().required("Vui lòng cho biết tên người gửi"),
+  nguoiNhan: Yup.string().required("Vui lòng nhập tên người nhận"),
+  loiNhan: Yup.string().required("Vui lòng nhập lời nhắn"),
   ghiChu: Yup.string(),
 });
 
 export default function SubmitPage() {
   const handleSubmitRadio = async (values: ItemRadio, { setSubmitting, resetForm }: any) => {
-    const toastId = toast.loading("Sending your request...");
+    const toastId = toast.loading("Đang gửi yêu cầu...");
     try {
-// <<<<<<< HEAD
       const lineIdLocal =
         typeof window !== "undefined"
           ? localStorage.getItem("lineId")
@@ -31,21 +30,12 @@ export default function SubmitPage() {
         ...values,
         lineId,
       };
-      // const res = await createRadio(payload)
-      // toast.success("🎧 Gửi thành công!", {
-      //   id: toastId, // 👈 replace loading
-      // });
-
-// =======
-      // const lineId = await getLiffId() || localStorage.getItem('lineId') || '';
-      // const payload: ItemRadio = { ...values, lineId };
       await createRadio(payload);
-      toast.success("Request sent successfully!", { id: toastId });
-// >>>>>>> feat/theme
+      toast.success("Gửi thành công!", { id: toastId });
       resetForm();
     } catch (error) {
       console.error(error);
-      toast.error("Something went wrong. Please try again.", { id: toastId });
+      toast.error("Có lỗi xảy ra. Vui lòng thử lại.", { id: toastId });
     } finally {
       setSubmitting(false);
     }
@@ -61,25 +51,25 @@ export default function SubmitPage() {
             <span className="relative inline-flex h-2 w-2 rounded-full bg-[#6ca03d]" />
           </span>
           <span className="text-xs font-medium text-[#5a8a32] dark:text-[#a4c97a] uppercase tracking-wider">
-            Live every Thursday
+            Phát sóng mỗi thứ Năm
           </span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl font-bold mb-3 leading-tight text-zinc-900 dark:text-white">
-          Share Your <span className="bg-gradient-to-r from-[#6ca03d] via-[#6ca03d] to-[#8ab862] bg-clip-text text-transparent">Vibe</span>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-3 leading-tight text-black dark:text-white">
+          Chia sẻ <span className="bg-gradient-to-r from-[#6ca03d] via-[#6ca03d] to-[#8ab862] bg-clip-text text-transparent">cảm hứng</span>
         </h1>
 
-        <p className="text-zinc-600 dark:text-zinc-100 text-base max-w-sm mx-auto">
-          Request a song and send a message to someone special through the radio waves
+        <p className="text-neutral-700 dark:text-neutral-300 text-base max-w-sm mx-auto">
+          Đăng ký bài hát và gửi lời nhắn tới người thân qua sóng radio
         </p>
       </section>
 
       {/* Form Card */}
       <div className="relative">
-        <div className="absolute -inset-px rounded-3xl bg-gradient-to-b from-black/5 dark:from-white/50 to-transparent pointer-events-none" />
+        <div className="absolute -inset-px rounded-3xl bg-gradient-to-b from-black/5 dark:from-white/10 to-transparent pointer-events-none" />
         <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-[#6ca03d]/10 via-[#6ca03d]/10 to-[#8ab862]/10 dark:from-[#6ca03d]/20 dark:via-[#6ca03d]/20 dark:to-[#8ab862]/20 blur-2xl opacity-50 pointer-events-none" />
 
-        <div className="relative bg-white/50 dark:bg-zinc-900/40 backdrop-blur-sm border border-black/5 dark:border-white/5 rounded-3xl p-6 sm:p-8">
+        <div className="relative bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-3xl p-6 sm:p-8">
           <Formik
             initialValues={{
               lineId: "",
@@ -96,10 +86,10 @@ export default function SubmitPage() {
               <Form className="space-y-5">
                 <InputBase
                   required
-                  label="Song"
+                  label="Bài hát"
                   name="baiHat"
                   as="input"
-                  placeholder="Song name or YouTube/Spotify link"
+                  placeholder="Tên bài hoặc liên kết YouTube / Spotify"
                   icon={<Music2 size={18} />}
                 />
 
@@ -109,7 +99,7 @@ export default function SubmitPage() {
                     label="Người gửi"
                     name="nguoiGui"
                     as="input"
-                    placeholder="Your name"
+                    placeholder="Tên của bạn"
                     icon={<UserCircle size={18} />}
                   />
                   <InputBase
@@ -117,7 +107,7 @@ export default function SubmitPage() {
                     label="Người nhận"
                     name="nguoiNhan"
                     as="input"
-                    placeholder="Recipient"
+                    placeholder="Tên người nhận"
                     icon={<UserCircle size={18} />}
                   />
                 </div>
@@ -127,18 +117,16 @@ export default function SubmitPage() {
                   label="Lời nhắn"
                   name="loiNhan"
                   as="textarea"
-                  placeholder="Write your heartfelt message..."
+                  placeholder="Viết lời nhắn của bạn..."
                   rows={4}
-                  // icon={<MessageCircle size={18} />}
                 />
 
                 <InputBase
                   label="Ghi chú"
                   name="ghiChu"
                   as="textarea"
-                  placeholder="Any special instructions for the DJ"
+                  placeholder="Ghi chú thêm cho DJ (nếu có)"
                   rows={2}
-                  // icon={<FileText size={18} />}
                 />
 
                 <button
@@ -152,12 +140,12 @@ export default function SubmitPage() {
                     {isSubmitting ? (
                       <>
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        Sending...
+                        Đang gửi...
                       </>
                     ) : (
                       <>
                         <Send size={18} strokeWidth={2.5} />
-                        Send Request
+                        Gửi yêu cầu
                       </>
                     )}
                   </div>
@@ -168,9 +156,9 @@ export default function SubmitPage() {
         </div>
       </div>
 
-      <p className="text-center text-zinc-500 text-sm mt-6 flex items-center justify-center gap-2">
+      <p className="text-center text-neutral-600 dark:text-neutral-400 text-sm mt-6 flex items-center justify-center gap-2">
         <Sparkles size={14} className="text-[#6ca03d]" />
-        Your request will be featured on Thursday's broadcast
+        Yêu cầu của bạn sẽ được lên sóng vào thứ Năm
       </p>
     </div>
   );
